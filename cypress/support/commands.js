@@ -23,7 +23,6 @@ Cypress.Commands.add('login', (user) => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
     cy.get('.dropdown-menu').contains('MyCompany').click();
     cy.get('[href="/client/2806/settings/general/"]').click();
-    cy.get('.nav > :nth-child(2) > .nav-link').click();
     })
     
 // -- This is a child command --

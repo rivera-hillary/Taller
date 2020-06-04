@@ -7,6 +7,7 @@ describe('CPD - Contract length', () => {
     cy.settings();
     cy.wait(1000);
     cy.url().should('include','/settings');
+    cy.get('.nav > :nth-child(2) > .nav-link').click();
 })
     it('It should be named "Contract Length"', () => {
     cy.get('.dropdown-toggle > .btn').click({force: true});
