@@ -1,0 +1,24 @@
+{
+  "name": "taller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rivera-hillary/Taller.git"
+  },
+  "author": "Hillary Rivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rivera-hillary/Taller/issues"
+  },
+  "homepage": "https://github.com/rivera-hillary/Taller#readme",
+  "dependencies": {
+    "cypress": "^4.7.0"
+  }
+}
