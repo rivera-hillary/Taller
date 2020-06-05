@@ -20,15 +20,8 @@ describe('CPD - Upgrade Eligibility Frequency', () => {
     it('Its initial state should be 0', () => {
         cy.get('#ATAndT-2-card > :nth-child(8) > .pl-0 > .choices > .choices__inner > .choices__list > .choices__item').contains('0');
     });
-
     it('selects 60', () => {
-
-        cy.get('#ATAndT-2-card > :nth-child(8) > .pl-0 > .choices > .choices__inner').click().find('[data-value="60"]');
-        //cy.get('#choices--UserOrderingMonthsFrequency-g2-item-choice-61').contains('60');
-
-      });
+        cy.get('#ATAndT-2-card > :nth-child(8) > .pl-0 > .choices > .choices__inner').click().get('.choices__item--selectable').should('be.hidden').invoke('show').contains('60').click({force: true});
+        //cy.log();
+    });
 });
-//cy.get('#ATAndT-2-card > :nth-child(8) > .pl-0 > .choices > .choices__inner').select('[data-value="60"]').should('have.value', '60');
-//cy.get('#ATAndT-2-card > :nth-child(8) > .pl-0 > .choices > .choices__inner > .choices__list > .choices__item').click().find('[data-value="60"]').click();
-//cy.get('[data-value="60"]').click({ multiple: true });
-//cy.get('.pl-0 > .choices > .choices__inner > .choices__list > .choices__item');
