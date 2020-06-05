@@ -18,12 +18,21 @@ Cypress.Commands.add('login', (user) => {
     cy.get('#username').type('akore');
     cy.get('#password').type('1');
     cy.get('#login.button').click();
-    })
-    Cypress.Commands.add('settings', (select) => {
+});
+Cypress.Commands.add('settings', (select) => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
     cy.get('.dropdown-menu').contains('MyCompany').click();
     cy.get('[href="/client/2806/settings/general/"]').click();
-    })
+});
+Cypress.Commands.add('programs', (select) => {
+    cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
+    cy.get('.dropdown-menu').contains('MyCompany').click();
+    cy.get('[href="/client/2806/programs/"]');
+});
+//BOTH
+Cypress.Commands.add('program', (select) => {
+    cy.get('.d-flex > [href="/client/2807/programs/"]').click();
+});
     
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
