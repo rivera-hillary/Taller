@@ -10,7 +10,7 @@ describe('CPD - BAN/FAN Cleanup', () => {
         cy.get('.nav > :nth-child(2) > .nav-link').click();
         cy.get('.dropdown-toggle > .btn').click({force: true});
         cy.get('[data-name="ATANDT"]').click();
-    });/*
+    });
     it('It should be named "Account Type"', () => {
         cy.get('#ATAndT-2-card > .mt-2 > [for=""]').contains('Account Type');
     });
@@ -19,7 +19,7 @@ describe('CPD - BAN/FAN Cleanup', () => {
     });
     it('It should be named "FAN"', () => {
         cy.get('#ATAndT-2-card > .mt-2 > .flex-wrap > :nth-child(2)').contains('FAN');
-    });*/
+    });
     it('It should say "FAN Account" and verify the select', () => {
         cy.get('#ATAndT-2-card > .mt-2 > .flex-wrap > :nth-child(2)').click();
         cy.get('#ATAndT-2-card > .form-group-select-ban-account > .form-group > label').contains('FAN Account');
