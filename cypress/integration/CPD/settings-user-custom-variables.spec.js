@@ -7,27 +7,26 @@ describe('CPD - User Custom Variables', () => {
     cy.settings();
     cy.wait(1000);
     cy.url().should('include','/settings');
-    cy.get(':nth-child(2) > .flex-wrap > :nth-child(1)').click();
 })
     it('It should be named "User Custom Variables"', () => {
         cy.get('.input-multiple > label').contains('User Custom Variables');
-    })
+    });
     it('Hover', () => {
         cy.get('.input-multiple > .fal').trigger('mouseover');
         cy.get('.tooltip-inner').should('be.visible').contains('Type in the custom variable name and press enter to add it.');
-    })
+    });
     it('Enter a custom variable', () => {
         cy.get('.choices__inner').type('Test{enter}');
-    })
+    });
     it('Enter a custom variable and deleted it', () => {
         cy.get('.choices__inner').type('Test-2{enter}');
         cy.get('[data-id="1"] > .choices__button').click();
-    })
+    });
     it('Repeat the custom variable and verified the message', () => {
         cy.get('.choices__inner').type('Test{enter}');
         cy.get('.choices__inner').type('Test{enter}');
         cy.get('.choices__list--dropdown > .choices__item').should('be.visible').contains('Only unique values can be added');
-    })
+    });
     it('Expand the text field', () => {
         cy.get('.choices__inner').type('Departament{enter}');
         cy.get('.choices__inner').type('Address{enter}');
@@ -49,5 +48,5 @@ describe('CPD - User Custom Variables', () => {
         cy.get('.choices__inner').type('International{enter}');
         cy.get('.choices__inner').type('Data{enter}');
         cy.get('.choices__inner').type('Lines{enter}');
-    })
-})
+    });
+});
