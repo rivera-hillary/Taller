@@ -33,7 +33,14 @@ Cypress.Commands.add('programs', (select) => {
 Cypress.Commands.add('program', (select) => {
     cy.get('.d-flex > [href="/client/2807/programs/"]').click();
 });
-    
+// MOTUS CPD 
+Cypress.Commands.add('usersMotusCPD', (select) => {
+    cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
+    cy.get('[data-name="MOTUS CPD"] > .pr-3').click();
+    cy.get('[href="/client/2811/users/"]').click();
+});
+
+
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
 //
