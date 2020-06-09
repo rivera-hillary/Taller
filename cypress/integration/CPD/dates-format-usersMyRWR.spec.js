@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('BothCompany > Users', () => {
+describe('MyRWR > Users', () => {
     const fourthDate = Cypress.moment().subtract(7, 'days').format('MM/DD/YYYY');
     beforeEach(() => {
         cy.visit('/');
