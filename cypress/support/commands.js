@@ -51,7 +51,7 @@ Cypress.Commands.add('programDetails', (select) => {
 
 //BOTH COMPANY - USERS
 Cypress.Commands.add('usersBothCompany', (select) => {
-    cy.get('[href="/client/2807/users/"]').click();
+    cy.get('.d-flex > [href="/client/2807/users/"]').click();
 });
 
 //BOTH COMPANY - ORDERS
