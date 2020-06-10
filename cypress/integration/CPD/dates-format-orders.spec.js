@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
 describe('BothCompany > Orders', () => {
-    const todaysDate = Cypress.moment().format('MM/DD/YYYY');
+    const firstDate = Cypress.moment().subtract(1, 'days').format('MM/DD/YYYY');
     beforeEach(() => {
         cy.visit('/');
         cy.login();
@@ -9,10 +9,10 @@ describe('BothCompany > Orders', () => {
         cy.orders();
     });
     it('Date on order: NL-00000008',() => {
-        cy.get('td').eq(4).wait(5000).should('contain', todaysDate);  
+        cy.get('td').eq(4).wait(5000).should('contain', firstDate);  
     });
     it('Date on order: NL-00000008 - New Line',() => {
         cy.get('td').eq(0).click();
-        cy.get(':nth-child(2) > .order-details-values > :nth-child(2)').wait(5000).should('contain', todaysDate);  
+        cy.get(':nth-child(2) > .order-details-values > :nth-child(2)').wait(5000).should('contain', firstDate);  
     });
 });

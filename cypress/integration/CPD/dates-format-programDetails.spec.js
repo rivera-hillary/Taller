@@ -1,9 +1,9 @@
 /// <reference types="Cypress" />
 
 describe('BothCompany > Programs > Program Details', () => {
-    const firstDate = Cypress.moment().subtract(6, 'days').format('MM/DD/YYYY');
-    const secondDate = Cypress.moment().subtract(5, 'days').format('MM/DD/YYYY');
-    const thirdDate = Cypress.moment().subtract(4, 'days').format('MM/DD/YYYY');
+    const firstDate = Cypress.moment().subtract(7, 'days').format('MM/DD/YYYY');
+    const secondDate = Cypress.moment().subtract(6, 'days').format('MM/DD/YYYY');
+    const thirdDate = Cypress.moment().subtract(5, 'days').format('MM/DD/YYYY');
     beforeEach(() => {
         cy.visit('/');
         cy.login();

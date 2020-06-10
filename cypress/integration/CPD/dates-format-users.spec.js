@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
-describe('BothCompany > Users', () => {
-    const firstDate = Cypress.moment().subtract(6, 'days').format('MM/DD/YYYY');
+describe('BothCompany > User Details', () => {
+    const firstDate = Cypress.moment().subtract(7, 'days').format('MM/DD/YYYY');
     beforeEach(() => {
         cy.visit('/');
         cy.login();

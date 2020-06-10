@@ -32,6 +32,11 @@ Cypress.Commands.add('programs', (select) => {
     cy.get('[href="/client/2806/programs/"]');
 });
 
+//ADMINISTRATION
+Cypress.Commands.add('administration', (select) => {
+    cy.get('.d-flex > .fal').click();
+});
+
 //BOTH
 Cypress.Commands.add('program', (select) => {
     cy.get('.d-flex > [href="/client/2807/programs/"]').click();
