@@ -70,7 +70,7 @@ Cypress.Commands.add('usersMotusCPD', (select) => {
 Cypress.Commands.add('usersMyRWR', (select) => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
     cy.get('[data-name="MYRWR"] > .pr-3').click();
-    cy.get('[href="/client/2809/users/"]').click();
+    cy.get('.d-flex > [href="/client/2809/users/"]').click();
 });
 
 
