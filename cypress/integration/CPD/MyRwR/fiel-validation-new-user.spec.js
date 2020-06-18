@@ -6,6 +6,7 @@ describe('Field Validation on Add User', () => {
         cy.login();
         cy.wait(1000);
         cy.usersMyRWR();
+        cy.get('.actions-bar > .dropdown > #dropdownMenuButton').click();
         cy.get('[href="/client/2809/users/new/"]').click();
     });
     it('Empty fields',() => {
@@ -55,11 +56,9 @@ describe('Field Validation on Add User', () => {
         // Numbers
         cy.get('#user-ClientEmployeeID').clear().type('123456');
         cy.get('.btn-primary').click();
-        /*
         // Symbols
-        cy.get('#user-ClientEmployeeID').clear().type('!"·$%&');
-        cy.get('.btn-primary').click();
-        */
+        //cy.get('#user-ClientEmployeeID').clear().type('!"·$%&');
+        //cy.get('.btn-primary').click();   
     });
     it('Email field',() => {
         cy.get('#user-FirstName').type('a');
@@ -78,11 +77,11 @@ describe('Field Validation on Add User', () => {
         cy.get('#user-City').type('d');
         cy.get('#user-State').type('e');
         cy.get('#user-ZipCode').type('08');
-        cy.get('#user-StartDate').type('2020-06-11');
+        cy.get('#user-StartDate').type('06/11/2020');
         cy.get('.rq-field > .form-group > .choices > .choices__inner > .choices__list > .choices__item').click();
         cy.get('[data-value="8835"]').click();
         cy.get('.btn-primary').click();
-    });
+    });// GENERA UN ERROR 500
     it('Admin User',() => {
         cy.get('#user-FirstName').type('ab');
         cy.get('#user-LastName').type('b');
@@ -93,7 +92,7 @@ describe('Field Validation on Add User', () => {
         cy.get('#user-City').type('d');
         cy.get('#user-State').type('e');
         cy.get('#user-ZipCode').type('08');
-        cy.get('#user-StartDate').type('2020-06-11');
+        cy.get('#user-StartDate').type('06/11/2020');
         cy.get('.btn-primary').click();
     });
 });

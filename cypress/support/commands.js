@@ -20,6 +20,7 @@ Cypress.Commands.add('login', (user) => {
     cy.get('#login.button').click();
 });
 
+// MYCOMPANY SETTINGS
 Cypress.Commands.add('settings', (select) => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
     cy.get('.dropdown-menu').contains('MyCompany').click();
@@ -34,12 +35,17 @@ Cypress.Commands.add('programs', (select) => {
 
 //ADMINISTRATION
 Cypress.Commands.add('administration', (select) => {
-    cy.get('.d-flex > .fal').click();
+    cy.get('.admin-toggle-button > .d-flex > .fal').click();
 });
 
 //BOTH
 Cypress.Commands.add('program', (select) => {
     cy.get('.d-flex > [href="/client/2807/programs/"]').click();
+});
+
+//BOTH - SETTINGS
+Cypress.Commands.add('csettings', (select) => {
+    cy.get('.d-flex > [href="/client/2807/settings/general/"]').click();
 });
 
 //BOTH COMPANY - PROGRAM DETAILS
@@ -56,7 +62,7 @@ Cypress.Commands.add('usersBothCompany', (select) => {
 
 //BOTH COMPANY - ORDERS
 Cypress.Commands.add('orders', (select) => {
-    cy.get('[href="/client/2807/orders/akore/"]').click();
+    cy.get('.d-flex > [href="/client/2807/orders/akore/"]').click();
 });
 
 // MOTUS CPD 

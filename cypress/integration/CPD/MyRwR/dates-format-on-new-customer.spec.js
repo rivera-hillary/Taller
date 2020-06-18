@@ -10,6 +10,7 @@ describe('Administration > New Customer', () => {
     it('Date on form',() => {
         cy.get('.actions-bar > .btn').click();
         // FORMULARIO 
-        cy.get('#client-StartDate').type('2020-06-10');
+        cy.get('#client-StartDate').type('10/06/2020');
+        cy.get('#newCustomerBtn').click();
     });
 });

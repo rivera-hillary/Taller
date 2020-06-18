@@ -1,7 +1,5 @@
 /// <reference types="Cypress" />
-
 describe('MyRWR > Users', () => {
-    const fourthDate = Cypress.moment().subtract(8, 'days').format('MM/DD/YYYY');
     beforeEach(() => {
         cy.visit('/');
         cy.login();
@@ -10,6 +8,6 @@ describe('MyRWR > Users', () => {
     });
     it('Date on order: NL-00000008',() => {
         cy.get(':nth-child(2) > tr > :nth-child(1) > .primary-lighter-color').click();
-        cy.get(':nth-child(2) > .pl-4 > :nth-child(3)').wait(5000).should('contain', fourthDate);  
+        cy.get(':nth-child(2) > .pl-4 > :nth-child(3)').wait(5000).should('contain','06/02/2020');  
     });
 });
