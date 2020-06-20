@@ -3,7 +3,7 @@
 describe('Field Validation on Add User', () => {
     beforeEach('BothCompany > Users > Add User', () => {
         cy.visit('/');
-        cy.login();
+        cy.login1();
         cy.wait(1000);
         cy.usersBothCompany();
         cy.get('.actions-bar > .dropdown > #dropdownMenuButton').click();

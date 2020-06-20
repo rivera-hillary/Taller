@@ -3,7 +3,7 @@
 describe('BothCompany > Settings', () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.login();
+        cy.login1();
         cy.wait(1000);
         cy.csettings();
     });

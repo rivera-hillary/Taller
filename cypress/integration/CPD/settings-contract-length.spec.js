@@ -3,7 +3,7 @@
 describe('CPD - Contract length', () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.login();
+        cy.login1();
         cy.settings();
         cy.wait(1000);
         cy.url().should('include','/settings');

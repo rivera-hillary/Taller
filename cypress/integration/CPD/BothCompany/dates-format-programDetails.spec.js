@@ -6,7 +6,7 @@ describe('BothCompany > Programs > Program Details', () => {
     const thirdDate = Cypress.moment().subtract(12, 'days').format('MM/DD/YYYY');
     beforeEach(() => {
         cy.visit('/');
-        cy.login();
+        cy.login1();
         cy.wait(1000);
         cy.programDetails();
     });

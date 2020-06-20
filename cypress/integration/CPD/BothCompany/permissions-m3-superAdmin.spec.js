@@ -3,7 +3,7 @@
 describe('BothCompany > Users > Add User', () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.login();
+        cy.login1();
     });/*
     it('Manager Dashboard Landing Page',() => {
         cy.url().should('include','dashboard');

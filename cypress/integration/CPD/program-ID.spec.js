@@ -3,7 +3,7 @@
 describe('CPD - BAN/FAN Cleanup', () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.login();
+        cy.login1();
         cy.programs();
         cy.wait(1000);
         cy.url().should('include','/programs');

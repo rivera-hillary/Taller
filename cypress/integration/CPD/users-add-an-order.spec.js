@@ -3,7 +3,7 @@
 describe('CPD - Add "order on behalf of" to 3 dots on user', () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.login();
+        cy.login1();
         cy.usersMotusCPD();
         cy.wait(1000);
         cy.url().should('include','/users');

@@ -14,10 +14,33 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
-Cypress.Commands.add('login', (user) => {
+
+// Otis — M3 SUPER ADMIN — akore — 1
+Cypress.Commands.add('login1', (user) => {
     cy.get('#username').type('akore');
     cy.get('#password').type('1');
     cy.get('#login.button').click();
+});
+
+// Zion — CPD User — zion — 1
+Cypress.Commands.add('login2', (user) => {
+    cy.get('#username').type('zion');
+    cy.get('#password').type('1');
+    cy.get('#login.button').click();
+});
+
+// Moslo — CPD MANAGER + CPD USER — 1171160 — password: 1
+Cypress.Commands.add('login3', (user) => {
+    cy.get('#username').type('1171160');
+    cy.get('#password').type('1');
+    cy.get('#login.button').click();
+});
+
+// Zion — CPD User — zion — 1
+Cypress.Commands.add('newOrder', (user) => {
+    cy.get('.d-flex > [href="/client/2807/orders/1158594/"]').click();
+    cy.get('.actions-bar > .modal-orders > #dropdownMenuButton').click();
+    cy.get('.type-order-card > .btn').click();
 });
 
 // MYCOMPANY SETTINGS
