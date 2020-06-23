@@ -3,7 +3,8 @@
 describe('Permissions CPD User', () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.login2();
+        // Zion — CPD User
+        cy.login('zion');
     });
     it('Manager Dashboard Landing Page',() => {
         cy.url().should('include','dashboard');

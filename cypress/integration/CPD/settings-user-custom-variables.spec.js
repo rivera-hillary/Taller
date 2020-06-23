@@ -3,7 +3,8 @@
 describe('CPD - User Custom Variables', () => {
     beforeEach(() => {
     cy.visit('/');
-    cy.login1();
+    // Otis — M3 SUPER ADMIN
+    cy.login('akore');
     cy.settings();
     cy.wait(1000);
     cy.url().should('include','/settings');

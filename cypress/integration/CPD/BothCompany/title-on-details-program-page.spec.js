@@ -3,7 +3,8 @@
 describe('CPD - 872', () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.login1();
+        // Otis — M3 SUPER ADMIN
+        cy.login('akore');
         cy.wait(1000);
         cy.program();
         cy.url().should('include','/programs');

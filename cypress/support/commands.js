@@ -15,88 +15,74 @@
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
 
-// Otis — M3 SUPER ADMIN — akore — 1
-Cypress.Commands.add('login1', (user) => {
-    cy.get('#username').type('akore');
+Cypress.Commands.add('login', (user) => {
+    cy.get('#username').type(user);
     cy.get('#password').type('1');
     cy.get('#login.button').click();
 });
 
-// Zion — CPD User — zion — 1
-Cypress.Commands.add('login2', (user) => {
-    cy.get('#username').type('zion');
-    cy.get('#password').type('1');
-    cy.get('#login.button').click();
-});
-
-// Moslo — CPD MANAGER + CPD USER — 1171160 — password: 1
-Cypress.Commands.add('login3', (user) => {
-    cy.get('#username').type('1171160');
-    cy.get('#password').type('1');
-    cy.get('#login.button').click();
-});
-
-// Zion — CPD User — zion — 1
-Cypress.Commands.add('newOrder', (user) => {
+// Zion — CPD User — zion — 1 
+Cypress.Commands.add('newOrder', () => {
     cy.get('.d-flex > [href="/client/2807/orders/1158594/"]').click();
     cy.get('.actions-bar > .modal-orders > #dropdownMenuButton').click();
     cy.get('.type-order-card > .btn').click();
 });
 
 // MYCOMPANY SETTINGS
-Cypress.Commands.add('settings', (select) => {
+Cypress.Commands.add('settings', () => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
     cy.get('.dropdown-menu').contains('MyCompany').click();
     cy.get('[href="/client/2806/settings/general/"]').click();
 });
 
-Cypress.Commands.add('programs', (select) => {
+// MYCOMPANY PROGRAMS
+Cypress.Commands.add('programs', () => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
     cy.get('.dropdown-menu').contains('MyCompany').click();
     cy.get('[href="/client/2806/programs/"]');
 });
 
 //ADMINISTRATION
-Cypress.Commands.add('administration', (select) => {
+Cypress.Commands.add('administration', () => {
     cy.get('.admin-toggle-button > .d-flex > .fal').click();
 });
 
-//BOTH
-Cypress.Commands.add('program', (select) => {
+//BOTH PROGRAMS
+Cypress.Commands.add('program', () => {
     cy.get('.d-flex > [href="/client/2807/programs/"]').click();
 });
 
 //BOTH - SETTINGS
-Cypress.Commands.add('csettings', (select) => {
+Cypress.Commands.add('csettings', () => {
     cy.get('.d-flex > [href="/client/2807/settings/general/"]').click();
 });
 
 //BOTH COMPANY - PROGRAM DETAILS
-Cypress.Commands.add('programDetails', (select) => {
+Cypress.Commands.add('programDetails', () => {
     cy.get('.d-flex > [href="/client/2807/programs/"]').click();
     cy.get(':nth-child(2) > .row > .program > .title-program > a').click();
     cy.get('.nav > :nth-child(2) > .nav-link').click();
 });
 
 //BOTH COMPANY - USERS
-Cypress.Commands.add('usersBothCompany', (select) => {
+Cypress.Commands.add('usersBothCompany', () => {
     cy.get('.d-flex > [href="/client/2807/users/"]').click();
 });
 
 //BOTH COMPANY - ORDERS
-Cypress.Commands.add('orders', (select) => {
+Cypress.Commands.add('orders', () => {
     cy.get('.d-flex > [href="/client/2807/orders/akore/"]').click();
 });
 
-// MOTUS CPD 
-Cypress.Commands.add('usersMotusCPD', (select) => {
+// MOTUS CPD USERS 
+Cypress.Commands.add('usersMotusCPD', () => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
     cy.get('[data-name="MOTUS CPD"] > .pr-3').click();
     cy.get('[href="/client/2811/users/"]').click();
 });
 
-// MYRWR 
-Cypress.Commands.add('usersMyRWR', (select) => {
+// MYRWR USERS
+Cypress.Commands.add('usersMyRWR', () => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
     cy.get('[data-name="MYRWR"] > .pr-3').click();
     cy.get('.d-flex > [href="/client/2809/users/"]').click();

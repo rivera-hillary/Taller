@@ -4,7 +4,8 @@ describe('BothCompany > Orders', () => {
     const firstDate = Cypress.moment().subtract(8, 'days').format('MM/DD/YYYY');
     beforeEach(() => {
         cy.visit('/');
-        cy.login1();
+        // Otis — M3 SUPER ADMIN
+        cy.login('akore');
         cy.wait(1000);
         cy.orders();
     });

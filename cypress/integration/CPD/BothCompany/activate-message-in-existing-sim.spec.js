@@ -3,7 +3,8 @@
 describe('BothCompany > Orders', () => {
     beforeEach(() => {
         cy.visit('/');
-        cy.login2();
+        // Zion — CPD User — zion — 1
+        cy.login('zion');
         cy.wait(1000);
         cy.url().should('include','dashboard');
         cy.newOrder();
