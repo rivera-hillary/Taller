@@ -5,13 +5,12 @@ describe('CPD - 834', () => {
         cy.visit('/');
         cy.login('zion');
         cy.wait(1000);
-        cy.orders();
+        cy.get('.d-flex > [href="/client/2807/orders/1158594/"]').click()
         cy.url().should('include','/orders');
     });
     it('Place order button',() => {
-        cy.get(':nth-child(1) > :nth-child(1) > .primary-lighter-color').click();
-        cy.get('.place-order-btn').contains('Place Order');
-        cy.get('.place-order-btn').click();
+        cy.get('.actions-bar > .modal-orders > #dropdownMenuButton').click();
         cy.get('.type-order-card > .btn').click();
+        cy.get('#BuildSelectedDeviceBtn').contains('Place Order');
     });
 });
