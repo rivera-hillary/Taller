@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('CPD - 802', () => {
+describe('CPD - 834', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.login('zion');
@@ -8,7 +8,7 @@ describe('CPD - 802', () => {
         cy.orders();
         cy.url().should('include','/orders');
     });
-    it('Preferred Area Code Address Format',() => {
+    it('Place order button',() => {
         cy.get(':nth-child(1) > :nth-child(1) > .primary-lighter-color').click();
         cy.get('.place-order-btn').contains('Place Order');
         cy.get('.place-order-btn').click();
