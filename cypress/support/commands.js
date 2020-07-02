@@ -28,11 +28,9 @@ Cypress.Commands.add('newOrder', () => {
     cy.get('.type-order-card > .btn').click();
 });
 
-// MYCOMPANY SETTINGS
+// CPD MOTUS SETTINGS
 Cypress.Commands.add('settings', () => {
-    cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
-    cy.get('.dropdown-menu').contains('MyCompany').click();
-    cy.get('[href="/client/2806/settings/general/"]').click();
+    cy.get('.d-flex > [href="/client/2822/settings/general/"]').click();
 });
 
 // MYCOMPANY PROGRAMS
@@ -64,14 +62,19 @@ Cypress.Commands.add('programDetails', () => {
     cy.get('.nav > :nth-child(2) > .nav-link').click();
 });
 
-//BOTH COMPANY - USERS
-Cypress.Commands.add('usersBothCompany', () => {
-    cy.get('.d-flex > [href="/client/2807/users/"]').click();
+//CPD MOTUS - USERS
+Cypress.Commands.add('users', () => {
+    cy.get('.d-flex > [href="/client/2822/users/"]').click();
 });
 
-//BOTH COMPANY - ORDERS
+//CPD MOTUS - ORDERS
 Cypress.Commands.add('orders', () => {
-    cy.get('.d-flex > [href="/client/2807/orders/akore/"]').click();
+    cy.get('.d-flex > [href="/client/2822/orders/akore/"]').click();
+});
+
+//BOTH COMPANY - INVENTORY
+Cypress.Commands.add('inventory', () => {
+    cy.get('.d-flex > [href="/client/2807/inventory/devices/"]').click();
 });
 
 // MOTUS CPD USERS 

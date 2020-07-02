@@ -5,9 +5,8 @@ describe('CPD - 876', () => {
         cy.visit('/');
         // Otis — M3 SUPER ADMIN
         cy.login('akore');
-        cy.wait(7000);
+        cy.wait(1000);
         cy.usersBothCompany();
-        cy.wait(6000);
         cy.url().should('include','users');
     });
     it('Send welcome emails to all users',() => {
