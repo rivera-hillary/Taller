@@ -5,17 +5,16 @@ describe('CPD - 826', () => {
         cy.visit('/');
         // Otis — M3 SUPER ADMIN
         cy.login('akore');
-        cy.wait(1000);
+        //cy.wait(1000);
         cy.settings();
         cy.url().should('include','/settings/general/');
         cy.get('.nav > :nth-child(2) > .nav-link').click();
     });
     it('Exits',() => {
-        cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').click().get('[role="listbox"]').contains('Installments');
-        cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').click().get('[role="listbox"]').contains('Subsidized');
-        cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').click().get('[role="listbox"]').contains('Full Retail');
+        cy.get('#ATAndT-1-card > :nth-child(9) > .form-group > .choices > .choices__inner').click().get('[role="listbox"]').contains('Installments');
+        cy.get('#ATAndT-1-card > :nth-child(9) > .form-group > .choices > .choices__inner').click().get('[role="listbox"]').contains('Subsidized');
+        cy.get('#ATAndT-1-card > :nth-child(9) > .form-group > .choices > .choices__inner').click().get('[role="listbox"]').contains('Full Retail');
     });
-    /*
     it('When "Installments" is selected',() => {
         cy.get(':nth-child(9) > .form-group > label').contains('Pricing Type');
         cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').click().get('[data-value="Installments"]').wait(500).eq(2).click();
@@ -24,7 +23,6 @@ describe('CPD - 826', () => {
         cy.get('.subsidized-options > .flex-wrap > .checked').should('not.be.visible');
         cy.get('[data-type="fullRetail"]').should('not.be.visible');
     });
-    
     it('When "Subsidized" is selected',() => {
         cy.get(':nth-child(9) > .form-group > label').contains('Pricing Type');
         cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').click().get('[data-value="Subsidized"]').click();
@@ -40,5 +38,5 @@ describe('CPD - 826', () => {
         cy.get('.subsidized-options > [for=""]').should('not.be.visible');
         cy.get('.subsidized-options > .flex-wrap > .checked').should('not.be.visible');
         cy.get('[data-type="fullRetail"]').should('not.be.visible');
-    });*/
+    });
 });

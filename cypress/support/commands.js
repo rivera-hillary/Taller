@@ -52,7 +52,7 @@ Cypress.Commands.add('program', () => {
 
 //BOTH - SETTINGS
 Cypress.Commands.add('csettings', () => {
-    cy.get('.d-flex > [href="/client/2807/settings/general/"]').click();
+    cy.get('.d-flex > [href="/client/2822/settings/general/"]').click();
 });
 
 //BOTH COMPANY - PROGRAM DETAILS
