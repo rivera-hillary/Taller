@@ -5,7 +5,7 @@ describe('CPD - 826', () => {
         cy.visit('/');
         // Otis — M3 SUPER ADMIN
         cy.login('akore');
-        //cy.wait(1000);
+        cy.wait(1000);
         cy.settings();
         cy.url().should('include','/settings/general/');
         cy.get('.nav > :nth-child(2) > .nav-link').click();
