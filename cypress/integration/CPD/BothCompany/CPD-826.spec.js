@@ -17,7 +17,7 @@ describe('CPD - 826', () => {
     });
     it('When "Installments" is selected',() => {
         cy.get(':nth-child(9) > .form-group > label').contains('Pricing Type');
-        cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').click().get('[data-value="Installments"]').wait(500).eq(2).click();
+        cy.get('#ATAndT-1-card > :nth-child(9) > .form-group > .choices > .choices__inner').click();
         cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').contains('Installments');
         cy.get('.subsidized-options > [for=""]').should('not.be.visible');
         cy.get('.subsidized-options > .flex-wrap > .checked').should('not.be.visible');
@@ -25,7 +25,7 @@ describe('CPD - 826', () => {
     });
     it('When "Subsidized" is selected',() => {
         cy.get(':nth-child(9) > .form-group > label').contains('Pricing Type');
-        cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').click().get('[data-value="Subsidized"]').click();
+        cy.get('#ATAndT-1-card > :nth-child(9) > .form-group > .choices > .choices__inner').click().wait(500).get('[data-value="subsidized"]').eq(0).click({ force: true });
         cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').contains('Subsidized');
         cy.get('.subsidized-options > [for=""]').contains('In Contract Upgrade');
         cy.get('.subsidized-options > .flex-wrap > .checked').contains('Pay Balance').should('be.visible');
@@ -33,7 +33,7 @@ describe('CPD - 826', () => {
     });
     it('When "Full Retail" is selected',() => {
         cy.get(':nth-child(9) > .form-group > label').contains('Pricing Type');
-        cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').click().get('[data-value="Full Retail"]').click();
+        cy.get('#ATAndT-1-card > :nth-child(9) > .form-group > .choices > .choices__inner').click().get('[data-value="full_retail"]').eq(0).click();
         cy.get(':nth-child(9) > .form-group > .choices > .choices__inner').contains('Full Retail');
         cy.get('.subsidized-options > [for=""]').should('not.be.visible');
         cy.get('.subsidized-options > .flex-wrap > .checked').should('not.be.visible');
