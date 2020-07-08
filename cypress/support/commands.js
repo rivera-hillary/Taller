@@ -72,9 +72,9 @@ Cypress.Commands.add('orders', () => {
     cy.get('.d-flex > [href="/client/2822/orders/akore/"]').click();
 });
 
-//BOTH COMPANY - INVENTORY
+//CPD MOTUS - INVENTORY
 Cypress.Commands.add('inventory', () => {
-    cy.get('.d-flex > [href="/client/2807/inventory/devices/"]').click();
+    cy.get('.d-flex > [href="/client/2822/inventory/devices/"]').click();
 });
 
 // MOTUS CPD USERS 
