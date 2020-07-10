@@ -4,7 +4,8 @@ describe('Permissions CPD User', () => {
     beforeEach(() => {
         cy.visit('/');
         // Zion — CPD User
-        cy.login('zion');
+        cy.login('cpduser');
+        cy.url().should('include','/dashboard');
     });
     it('Manager Dashboard Landing Page',() => {
         cy.url().should('include','dashboard');
@@ -15,10 +16,10 @@ describe('Permissions CPD User', () => {
         cy.get(':nth-child(5) > .nav-link').should('not.be.visible');
     });
     it('Dont view programs page', () => {
-        cy.get('.d-flex > [href="/client/2807/programs/"]').should('not.be.visible');
+        cy.get('.d-flex > [href="/client/2822/programs/"]').should('not.be.visible');
     })
     it('Dont view users page', () => {
-        cy.get('.d-flex > [href="/client/2807/users/"]').should('not.be.visible');
+        cy.get('.d-flex > [href="/client/2822/users/"]').should('not.be.visible');
     })/*
     it('Edit Users', () => {
         cy.get('.d-flex > [href="/client/2807/users/"]').click();
@@ -29,7 +30,7 @@ describe('Permissions CPD User', () => {
         cy.get('.action-container > .btn-primary').click();
     })*/
     it('Dont view company settings', () => {
-        cy.get('.d-flex > [href="/client/2807/settings/general/"]').should('not.be.visible');
+        cy.get('.d-flex > [href="/client/2822/settings/general/"]').should('not.be.visible');
     })/*
     it('Edit Company Settings', () => {
         cy.get('.d-flex > [href="/client/2807/settings/general/"]').click();
@@ -38,7 +39,6 @@ describe('Permissions CPD User', () => {
         cy.get('.btn-inline > .btn').click();
     })*/
     it('Dont view inventory page', () => {
-        cy.get('.d-flex > [href="/client/2807/inventory/devices/"]').should('not.be.visible');
+        cy.get('.d-flex > [href="/client/2822/inventory/devices/"]').should('not.be.visible');
     })
 });
-//https://mobility-cpd-qa-mobility.motusclouds.com/client/2807/programs/

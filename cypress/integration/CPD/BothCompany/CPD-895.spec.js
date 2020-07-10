@@ -15,7 +15,7 @@ describe('CPD - 895', () => {
         cy.get('.justify-content-between > .primary-color').click();
         cy.get('[data-reference="3"] > .d-flex.mb-3 > :nth-child(2) > .checkbox-entity-device').click();
         cy.get('[data-reference="3"] > .d-flex.mb-3 > :nth-child(2) > .checkbox-entity-phone-line').click();
-        cy.get('[data-reference="3"] > .associations-wrapper > .entity-type-phone-line > .entity-selector > .form-group > .choices > .choices__inner > .choices__list > .choices__item').click().get('[data-reference="3"] > .associations-wrapper > .entity-type-phone-line > .entity-selector > .form-group > .choices > .choices__list--dropdown > .choices__input').type('5463864747{enter}');
+        cy.get('[data-reference="3"] > .associations-wrapper > .entity-type-phone-line > .entity-selector > .form-group > .choices > .choices__inner > .choices__list > .choices__item').click().get('[data-reference="3"] > .associations-wrapper > .entity-type-phone-line > .entity-selector > .form-group > .choices > .choices__list--dropdown > .choices__input').type('3008009090{enter}');
         cy.get('[data-reference="3"] > .associations-wrapper > .entity-type-device > .entity-selector > .form-group > .choices > .choices__inner > .choices__list > .choices__item').click().get('[data-reference="3"] > .associations-wrapper > .entity-type-device > .entity-selector > .form-group > .choices > .choices__list--dropdown > .choices__input').type('00000000000000001{enter}');
         cy.get('.action-container > .btn-primary').click();
         cy.get('.entity-type-phone-line > .entity-selector > .form-group > .invalid-feedback').contains('This line is repeated on the form.');

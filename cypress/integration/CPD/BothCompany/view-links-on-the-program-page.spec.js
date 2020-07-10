@@ -10,16 +10,15 @@ describe('CPD - 857', () => {
         cy.program();
         cy.url().should('include','/programs');
         cy.get('[data-test=noEditView]').as('viewLinks');
-        cy.get('@viewLinks').should('have.attr','href').and('eq','/client/2807/programs/cpd/8831/details/');
+        cy.get('@viewLinks').should('have.attr','href').and('eq','/client/2822/programs/cpd/8890/details/');
         cy.get('@viewLinks').contains('View');
     });
     it('View links CPD SUPPORT',() => {
-        cy.login('1158697');
+        cy.login('cpdadmin');
         cy.wait(1000);
         cy.program();
         cy.url().should('include','/programs');
-        cy.get('[data-test=noEditView]').as('viewLinks');
-        cy.get('@viewLinks').should('have.attr','href').and('eq','/client/2807/programs/cpd/8831/details/');
-        cy.get('@viewLinks').contains('View');
+        cy.get('#programListdropdownMenuButton').click();
+        cy.get('.dropdown-menu > [href="/client/2822/programs/cpd/8890/details/"]').contains('View').should('have.attr','href').and('eq','/client/2822/programs/cpd/8890/details/');
     });
 });

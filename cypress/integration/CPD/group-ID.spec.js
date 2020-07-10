@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('CPD - BAN/FAN Cleanup', () => {
+describe('CPD - Group ID', () => {
     beforeEach(() => {
         cy.visit('/');
         // Otis — M3 SUPER ADMIN

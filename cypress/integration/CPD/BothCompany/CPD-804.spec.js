@@ -48,15 +48,17 @@ describe('CPD - 804', () => {
         cy.get('.primary-lighter-color').click();
         cy.get(':nth-child(1) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
         cy.get('[data-button="Reset Timer"]').contains('Reset Contract End Date Timer').click();
-        cy.get('.swal2-confirm').click(); 
+        cy.get('.swal2-confirm').click();
+        cy.get('.alert').contains('Date updated successfully'); 
     });
     it('Reset Upgrate Eligibility Date Timer option',() => {
         cy.get('form > .search-control > .form-control').type('Gilberto{enter}');
         cy.get('.primary-lighter-color').click();
         cy.get(':nth-child(1) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
         cy.get('[data-button="Reset Timer"]').contains('Reset Upgrate Eligibility Date Timer').click();
-        cy.get('.swal2-confirm').click(); 
-    });   
+        cy.get('.swal2-confirm').click();
+        cy.get('.alert').contains('Date updated successfully'); 
+    });
     it('Deactivate Line option',() => {
         cy.get('form > .search-control > .form-control').type('Gilberto{enter}');
         cy.get('.primary-lighter-color').click();
@@ -71,6 +73,7 @@ describe('CPD - 804', () => {
         cy.get('.button-with-options > #dropdownMenuButton').click();
         cy.get('.font-17 > .dropdown-item').click();
         cy.get('.swal2-confirm').click();
+        cy.get('.ml-5 > .font-12').should('be.visible').contains('active');
     });
     it('Suspend Line option',() => {
         cy.get('form > .search-control > .form-control').type('Gilberto{enter}');
@@ -86,6 +89,7 @@ describe('CPD - 804', () => {
         cy.get('.button-with-options > #dropdownMenuButton').click();
         cy.get('.font-17 > .dropdown-item').click();
         cy.get('.swal2-confirm').click();
+        cy.get('.ml-5 > .font-12').should('be.visible').contains('active');
     });
     it('Request Call Forwarding option',() => {
         cy.get('form > .search-control > .form-control').type('Gilberto{enter}');

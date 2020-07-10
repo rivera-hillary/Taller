@@ -45,9 +45,9 @@ Cypress.Commands.add('administration', () => {
     cy.get('.admin-toggle-button > .d-flex > .fal').click();
 });
 
-//BOTH PROGRAMS
+//CPD MOTUS PROGRAMS
 Cypress.Commands.add('program', () => {
-    cy.get('.d-flex > [href="/client/2807/programs/"]').click();
+    cy.get('.d-flex > [href="/client/2822/programs/"]').click();
 });
 
 //BOTH - SETTINGS
