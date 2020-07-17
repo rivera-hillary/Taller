@@ -36,8 +36,7 @@ describe('CPD - 799', () => {
         // Change Contract End Date
         cy.get(':nth-child(1) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
         cy.get('[data-date-type="ced"]').contains('Change Contract End Date').click();
-        cy.get('#dateInput').type(firstDate);
-        cy.get('.edit-date-modal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
+        cy.get('#dateInput').wait(800).type(firstDate).get('.edit-date-modal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
         cy.get('.alert').contains('Date updated successfully');
         // Reset Timer
         cy.get(':nth-child(1) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
@@ -51,7 +50,8 @@ describe('CPD - 799', () => {
         // Change Upgrate Eligibility Date
         cy.get(':nth-child(1) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
         cy.get('[data-date-type="ued"]').contains('Change Upgrate Eligibility Date').click();
-        cy.get('#dateInput').type(firstDate).get('.edit-date-modal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
+        cy.get('#dateInput').wait(800).type(firstDate);
+        cy.get('.edit-date-modal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
         cy.get('.alert').contains('Date updated successfully');
         // Reset Timer
         cy.get(':nth-child(1) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
@@ -92,7 +92,7 @@ describe('CPD - 799', () => {
         // Change Contract End Date
         cy.get(':nth-child(3) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
         cy.get(':nth-child(3) > .inventory-item__content > .inventory-item__options > .dropdown > .dropdown-menu > [data-date-type="ced"]').contains('Change Contract End Date').click();
-        cy.get('#dateInput').type(firstDate);
+        cy.get('#dateInput').wait(800).type(firstDate);
         cy.get('.edit-date-modal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
         cy.get('.alert').contains('Date updated successfully');
         // Reset Timer
@@ -107,12 +107,12 @@ describe('CPD - 799', () => {
         // Change Upgrate Eligibility Date
         cy.get(':nth-child(3) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
         cy.get(':nth-child(3) > .inventory-item__content > .inventory-item__options > .dropdown > .dropdown-menu > [data-date-type="ued"]').contains('Change Upgrate Eligibility Date').click();
-        cy.get('#dateInput').type(firstDate).wait(500).get('.edit-date-modal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
+        cy.get('#dateInput').wait(800).type(firstDate).get('.edit-date-modal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click();
         cy.get('.alert').contains('Date updated successfully');
         // Reset Timer
         cy.get(':nth-child(3) > .inventory-item__content > .inventory-item__options > .dropdown > #dropdownMenuButton').click();
         cy.get('[href="/client/2822/users/839319/phone_line/54c90e52-a27d-4646-ba87-66982da41a48/update-date/?type=reset_ued_timer"]').click();
-        cy.get('.swal2-confirm').click();
+        cy.get('.swal2-confirm').click().wait(500);
         cy.get('.alert').contains('Date updated successfully'); 
         cy.get(':nth-child(3) > .inventory-item__content > .inventory-item__section--efu > .inventory-item__value').should('contain', thirdDate);
     });
