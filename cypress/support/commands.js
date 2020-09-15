@@ -15,30 +15,26 @@
 // -- This is a parent command --
 // Cypress.Commands.add("login", (email, password) => { ... })
 
+import 'cypress-file-upload';
+
 Cypress.Commands.add('login', (user) => {
     cy.get('#username').type(user);
     cy.get('#password').type('1');
-    cy.get('#login.button').click();
+    cy.get('#login.button').click().wait(500);
 });
 
-// Zion — CPD User — zion — 1 
+// CPD User — zion — 1 
 Cypress.Commands.add('newOrder', () => {
-    cy.get('.d-flex > [href="/client/2807/orders/1158594/"]').click();
-    cy.get('.actions-bar > .modal-orders > #dropdownMenuButton').click();
-    cy.get('.type-order-card > .btn').click();
+    cy.get('.d-flex > [href="/client/3980/orders/1216414/"]').click();
+    cy.get('.modal-orders > #dropdownMenuButton').click();
+    cy.get(':nth-child(1) > .type-order-card > .btn').click();
 });
 
 // CPD MOTUS SETTINGS
 Cypress.Commands.add('settings', () => {
-    cy.get('.d-flex > [href="/client/2822/settings/general/"]').click();
+    cy.get('.d-flex > [href="/client/3980/settings/general/"]').click();
 });
 
-// MYCOMPANY PROGRAMS
-Cypress.Commands.add('programs', () => {
-    cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
-    cy.get('.dropdown-menu').contains('MyCompany').click();
-    cy.get('[href="/client/2806/programs/"]');
-});
 
 //ADMINISTRATION
 Cypress.Commands.add('administration', () => {
@@ -47,12 +43,12 @@ Cypress.Commands.add('administration', () => {
 
 //CPD MOTUS PROGRAMS
 Cypress.Commands.add('program', () => {
-    cy.get('.d-flex > [href="/client/2822/programs/"]').click();
+    cy.get('.d-flex > [href="/client/3980/programs/"]').click();
 });
 
-//BOTH - SETTINGS
+//SETTINGS
 Cypress.Commands.add('csettings', () => {
-    cy.get('.d-flex > [href="/client/2822/settings/general/"]').click();
+    cy.get('.d-flex > [href="/client/3980/settings/general/"]').click();
 });
 
 //BOTH COMPANY - PROGRAM DETAILS
@@ -64,31 +60,55 @@ Cypress.Commands.add('programDetails', () => {
 
 //CPD MOTUS - USERS
 Cypress.Commands.add('users', () => {
-    cy.get('.d-flex > [href="/client/2822/users/"]').click();
+    cy.get('.d-flex > [href="/client/3980/users/"]').click();
 });
 
-//CPD MOTUS - ORDERS
+//CPD MOTUS - HOME
+Cypress.Commands.add('home', () => {
+    cy.get('.d-flex > [href="/client/3980/dashboard/"]').click();
+});
+// QAR CPD - HOME
+Cypress.Commands.add('homer', () => {
+    cy.get('.d-flex > [href="/client/8329/dashboard/"]').click();
+});
+// QAR CPD - HOME
+Cypress.Commands.add('homej', () => {
+    cy.get('.d-flex > [href="/client/7183/dashboard/"]').click();
+});
+
+// QA CPD - ORDERS
 Cypress.Commands.add('orders', () => {
-    cy.get('.d-flex > [href="/client/2822/orders/akore/"]').click();
+    cy.get('.d-flex > [href="/client/3980/orders/akore/"]').click();
 });
 
-//CPD MOTUS - INVENTORY
+//INVENTORY
 Cypress.Commands.add('inventory', () => {
-    cy.get('.d-flex > [href="/client/2822/inventory/devices/"]').click();
+    cy.get('.d-flex > [href="/client/3980/inventory/phone_lines/"]').click();
+});
+Cypress.Commands.add('inventoryr', () => {
+    cy.get('.d-flex > [href="/client/8329/inventory/phone_lines/"]').click();
 });
 
-// MOTUS CPD USERS 
-Cypress.Commands.add('usersMotusCPD', () => {
+// COMPANIES
+// QA CPD
+Cypress.Commands.add('company', () => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
-    cy.get('[data-name="MOTUS CPD"] > .pr-3').click();
-    cy.get('[href="/client/2811/users/"]').click();
+    cy.get('[data-name="QA CPD"]').click().wait(500);
+});
+// QA R
+Cypress.Commands.add('companyr', () => {
+    cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
+    cy.get('[data-name="QA R"]').click().wait(500);
+});
+// USERS QA R
+Cypress.Commands.add('usersr', () => {
+    cy.get('.d-flex > [href="/client/8329/users/"]').click();
 });
 
-// CPD & RWR MOTUS USERS
-Cypress.Commands.add('userscpdrwr', () => {
+// J&Js Second Dance
+Cypress.Commands.add('companyj', () => {
     cy.get('.dropdown-companies > .dropdown > .dropdown-toggle > .d-flex').click();
-    cy.get('[data-name="CPD & RWR MOTUS"] > .pr-3').click();
-    cy.get('.d-flex > [href="/client/2821/users/"]').click();
+    cy.get('[data-name="J&JS SECOND DANCE"]').click().wait(500);
 });
 
 

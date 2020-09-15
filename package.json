@@ -18,7 +18,9 @@
     "url": "https://github.com/rivera-hillary/Taller/issues"
   },
   "homepage": "https://github.com/rivera-hillary/Taller#readme",
-  "dependencies": {
-    "cypress": "^4.7.0"
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^5.0.0",
+    "cypress-file-upload": "^4.1.1"
   }
 }
