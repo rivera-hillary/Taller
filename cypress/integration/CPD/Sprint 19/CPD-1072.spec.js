@@ -3,7 +3,6 @@
 describe('CPD - 1072', () => {
     beforeEach(() => {
         cy.visit('/');
-        // CPD User — cpduser — 1
         cy.login('akore');
         cy.wait(1000);
         cy.company();

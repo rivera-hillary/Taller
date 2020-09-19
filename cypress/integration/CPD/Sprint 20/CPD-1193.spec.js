@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Associations', () => {
+describe('CPD-1193', () => {
     beforeEach(() => {
         cy.visit('/');
         cy.login('akore');

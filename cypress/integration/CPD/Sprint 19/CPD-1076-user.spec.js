@@ -4,7 +4,7 @@ describe('CPD - 1076', () => {
     beforeEach(() => {
         cy.visit('/');
         // CPD User — cpd_user — 1
-        cy.login('cpd_user');
+        cy.login('cpduser');
         cy.wait(1000);
         cy.url().should('include','dashboard');
     });
